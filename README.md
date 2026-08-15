@@ -40,20 +40,29 @@ change too — an inaccurate privacy policy is worse than none.
 | "synced to Cloud Firestore … images to Cloud Storage" | `firestore_remote_data_source.dart` keeps writing to Firestore/Storage under the user's uid. |
 | "Firebase Crashlytics, Analytics, Messaging, Remote Config, App Check" and "PostHog" | All are actually initialised in the released build. Remove any row that is dropped. |
 | Analytics events `sign_up`, `login`, `account_deleted` | Matches `lib/core/analytics/analytics_helper.dart`. Update §5 when events are added. |
-| "Camera / Photo library" permissions in §9 | The app really does offer both `ImageSource.camera` and `ImageSource.gallery` in `add_trade_tab.dart`. See the open issue below. |
-| Deletion wording in §11 | **Read this before changing it.** `auth_profile_sheet.dart` calls `user.delete()`, which removes the Firebase Auth account only — it does **not** delete the Firestore documents or Storage images. The policy therefore promises exactly that, plus an email route for erasing the cloud copy within 30 days. |
+| Deletion wording in §11 | `_deleteAccount()` in `auth_profile_sheet.dart` calls `TradeRepository.deleteAccountData()` — which erases the Storage images, the `trades` subcollection and the `users/{uid}` document — *before* `user.delete()`. If that order is ever changed, or the cascade removed, §11 becomes a false promise. |
+| "Camera / Photo library" permissions in §9 | `Info.plist` keeps `NSCameraUsageDescription` and `NSPhotoLibraryUsageDescription`. |
 
-## Open issues to fix in the app
+## How account deletion works
 
-1. **Account deletion does not erase cloud data.** `user.delete()` removes the auth account but leaves
-   `users/{uid}` documents, the `trades` subcollection, and the uploaded images in Cloud Storage.
-   Apple requires that in-app account deletion actually removes the user's data. Until a Cloud
-   Function or client-side cascade delete is implemented, the email route in §11 must stay in the
-   policy and must be honoured within 30 days.
-2. **Missing iOS usage descriptions.** `ios/Runner/Info.plist` has no `NSCameraUsageDescription` or
-   `NSPhotoLibraryUsageDescription`, yet the app calls both `ImageSource.camera` and
-   `ImageSource.gallery`. On iOS this crashes at the moment of the request and is an App Review
-   rejection. Add both keys before the next submission.
+Both issues that once made §11 inaccurate are fixed (2026-08-15):
+
+1. **Cascade delete.** `FirestoreRemoteDataSource.deleteAllUserData()` removes the Storage images
+   (listing the folder, with per-document deletion as a fallback), then every document in the
+   `trades` subcollection in batches, then the `users/{uid}` document. `TradeRepositoryImpl
+   .deleteAccountData()` calls it and then clears the local Drift database. The UI runs all of that
+   **before** `user.delete()`, because the security rules need a valid auth token.
+2. **Recent-login pre-check.** Firebase rejects `user.delete()` when the last sign-in is stale.
+   `_deleteAccount()` checks `user.metadata.lastSignInTime` first and aborts *before* deleting
+   anything, so a refusal can never leave the account alive with an already-erased journal. If the
+   check is passed but deletion still fails, the user is told the data is gone and to sign in again
+   (`delete_account_partial`).
+3. **Storage rule.** `storage.rules` allows the owner to `list` `users/{userId}/trades`, which the
+   image cleanup needs. **Deploy it** — `firebase deploy --only storage` — or the cleanup silently
+   falls back to per-document deletion and leaves orphaned images behind.
+4. **iOS usage descriptions.** `NSCameraUsageDescription` and `NSPhotoLibraryUsageDescription` are
+   now in `ios/Runner/Info.plist`. They are English only; add `InfoPlist.strings` per language if you
+   want them localized like the rest of the app.
 
 ## Publishing checklist
 
