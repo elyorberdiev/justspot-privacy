@@ -1,169 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIVACY POLICY - JustSpot - Trading Journal App</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1, h2, h3 { color: #0ECB81; }
-        a { color: #0ECB81; }
-        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9em; color: #666; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — JustSpot Trading Journal</title>
+<meta name="description" content="Privacy Policy for JustSpot — Trading Journal, a trade journalling app by Fazogirapps.">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <h1>PRIVACY POLICY</h1>
-    <p><strong>JustSpot - Trading Journal App by Fazogirapps</strong><br>
-    Effective Date: July 26, 2026<br>
-    Last Updated: July 26, 2026</p>
 
-    <h2>1. Introduction</h2>
-    <p>Welcome to the JustSpot - Trading Journal App ("App", "we", "our", or "us") developed and operated by Fazogirapps. This Privacy Policy explains how we collect, use, store, share, and protect your personal information when you use our App on Android and iOS platforms.</p>
-    <p>By downloading, installing, or using our App, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the App.</p>
-    <p>Contact: <code>fazogirapps@gmail.com</code></p>
+<header class="doc-header">
+  <span class="brand">Fazogirapps</span>
+  <h1>Privacy Policy</h1>
+  <p class="meta">
+    For the JustSpot — Trading Journal mobile app on iOS and Android.<br>
+    Effective Date: <strong>July 26, 2026</strong> · Last Updated: <strong>August 15, 2026</strong>
+  </p>
+  <p class="nav-links"><a href="terms.html">Terms of Use →</a></p>
+</header>
 
-    <h2>2. Information We Collect</h2>
-    <h3>2.1 Information You Provide Directly</h3>
-    <ul>
-        <li>Email address (for account registration and authentication)</li>
-        <li>Display name or username</li>
-        <li>JustSpot - Trading Journal entries: trade date, instrument/ticker, entry price, exit price, position size, profit & loss (P&L), trade direction (long/short), and any notes or tags you add</li>
-        <li>Journal notes and written reflections you create within the App</li>
-    </ul>
-    <p>We do not collect broker credentials, API keys, or connect to any brokerage accounts. All trade data is entered manually by you.</p>
+<div class="summary">
+  <h2>Summary — the short version</h2>
+  <ul>
+    <li>The App <strong>never connects to a broker or exchange</strong>. It asks for no API keys, no broker password, and no bank or card details. Every trade is typed in by you.</li>
+    <li>You start signed in anonymously. You may optionally sign in with Google or Apple, which gives us your email address and display name.</li>
+    <li>Your journal is stored on your device and, once signed in, synced to our Firebase cloud under your account.</li>
+    <li>We use Firebase and PostHog to understand crashes and aggregate usage. We do not show ads and we do not sell your data.</li>
+    <li>You can delete your account from the profile screen — see <a href="#deletion">section 11</a> for exactly what that removes.</li>
+  </ul>
+</div>
 
-    <h3>2.2 Information Collected Automatically</h3>
-    <ul>
-        <li>Device information: device model, operating system version (Android/iOS), unique device identifiers</li>
-        <li>App usage data: features used, session duration, screens visited</li>
-        <li>Crash reports and error logs</li>
-        <li>App version and language settings</li>
-    </ul>
+<h2>1. Introduction</h2>
+<p>JustSpot — Trading Journal ("App", "we", "our", "us") is developed and operated by Fazogirapps. This Privacy Policy explains what information the App handles, why, who else is involved, and what choices you have.</p>
+<p>By downloading, installing, or using the App you agree to the practices described here. If you do not agree, please do not use the App.</p>
+<p>Contact: <a href="mailto:fazogirapps@gmail.com">fazogirapps@gmail.com</a></p>
 
-    <h3>2.3 User-Generated Content</h3>
-    <ul>
-        <li>Text notes, journal entries, and trade annotations stored locally on your device</li>
-        <li>For Premium users: the above content is also synced to Firebase Cloud (Google LLC) to enable cross-device access and backup</li>
-    </ul>
+<h2>2. Accounts and Sign-In</h2>
+<p>On first launch the App signs you in <strong>anonymously</strong> through Firebase Authentication, which issues a random identifier. Nothing about you is collected at that point.</p>
+<p>You may then sign in with <strong>Google</strong> or <strong>Apple</strong> so that your journal is backed up and can be restored. When you do, we receive from that provider:</p>
+<ul>
+  <li>your email address (Apple users may choose Apple's private relay address instead);</li>
+  <li>your display name, where the provider supplies it;</li>
+  <li>the account identifier the provider issues.</li>
+</ul>
+<p>We never receive your Google or Apple password. We do <strong>not</strong> collect your phone number, postal address, date of birth, precise location, contacts, calendar, or health data.</p>
 
-    <h2>3. How We Use Your Information</h2>
-    <p>We use the collected information for the following purposes:</p>
-    <ul>
-        <li>To provide, maintain, and improve the App's core features</li>
-        <li>To authenticate your account and enable secure login</li>
-        <li>To sync your journal data across devices (Premium users via Firebase)</li>
-        <li>To process and manage your subscription through RevenueCat</li>
-        <li>To verify in-app purchase entitlements on Google Play and Apple App Store</li>
-        <li>To diagnose technical issues and fix bugs using crash analytics</li>
-        <li>To respond to your support requests sent to fazogirapps@gmail.com</li>
-        <li>To send important service-related notifications (e.g., subscription renewal, policy updates)</li>
-    </ul>
-    <p>We do not use your trading data for advertising, profiling, or selling to third parties.</p>
+<h2 id="no-broker">3. What the App Deliberately Does Not Collect</h2>
+<div class="warning">
+  <p><strong>JustSpot has no broker or exchange integration.</strong> It does not ask for, store, or transmit broker credentials, exchange API keys, wallet keys or seed phrases, bank account details, or payment card numbers, and it cannot place, modify, or close a trade. If any screen or message ever asks you for such credentials in the name of JustSpot, it is not us — do not enter them, and contact us.</p>
+</div>
 
-    <h2>4. Premium Subscription & In-App Purchases</h2>
-    <p>The App offers a Premium version with additional features, available via:</p>
-    <ul>
-        <li>Monthly or annual auto-renewing subscription on Android (Google Play Billing)</li>
-        <li>Monthly or annual auto-renewing subscription on iOS (Apple In-App Purchase)</li>
-    </ul>
-    <p>All payment transactions are processed by the respective platform stores (Google Play or Apple App Store). We do not collect, process, or store your payment card details or banking information directly.</p>
+<h2>4. Information You Provide</h2>
+<h3>4.1 Trade entries</h3>
+<p>For each trade you record, the App stores what you enter: the instrument or ticker symbol, the asset type, entry price, exit price, quantity, date, the strategy you used, the emotion you felt, the mistake you identify, whether you screened it for Shariah compliance, and your free-text notes. Profit and loss is calculated from those figures on your device.</p>
 
-    <h3>4.1 RevenueCat</h3>
-    <p>We use RevenueCat, Inc. as our subscription management platform. RevenueCat receives purchase receipts and subscription status from Google Play and Apple to verify your entitlements and manage your Premium access.</p>
-    <p>RevenueCat may collect:</p>
-    <ul>
-        <li>A pseudonymous user ID linked to your purchases</li>
-        <li>Purchase receipt data and subscription status</li>
-        <li>App and device identifiers for receipt validation</li>
-    </ul>
-    <p>RevenueCat does not receive your financial or payment card data. For details, see RevenueCat's Privacy Policy at: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a></p>
+<h3>4.2 Screenshots and images</h3>
+<p>You may attach an image to a trade — typically a chart screenshot — from your photo library or by taking a photo. The App accesses only the specific image you select or capture. It does not browse, index, or upload your photo library.</p>
 
-    <h3>4.2 Subscription Management</h3>
-    <p>Auto-renewal: Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
-    <p>To cancel your subscription:</p>
-    <ul>
-        <li>Android: Open Google Play Store &rarr; Profile &rarr; Payments & subscriptions &rarr; Subscriptions</li>
-        <li>iOS: Open Settings &rarr; [your name] &rarr; Subscriptions</li>
-    </ul>
-    <p>Cancellation takes effect at the end of the current billing period. We do not provide refunds for partial subscription periods unless required by applicable law.</p>
+<h3>4.3 Journal notes</h3>
+<p>Any reflection or note you write in the App is stored the same way as the rest of the entry.</p>
 
-    <h2>5. Third-Party Services</h2>
-    <p>Our App integrates the following third-party services. Each operates under its own privacy policy:</p>
-    <ul>
-        <li><strong>Firebase (Google LLC):</strong>
-            <ul>
-                <li>Firebase Authentication — secure user sign-in</li>
-                <li>Firebase Firestore — cloud sync of journal data for Premium users</li>
-                <li>Firebase Analytics — anonymous usage statistics</li>
-                <li>Firebase Crashlytics — crash and error reporting</li>
-                <li>Google's Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-            </ul>
-        </li>
-        <li><strong>PostHog, Inc.</strong> — Anonymous usage statistics and product analytics. (Privacy Policy: <a href="https://posthog.com/privacy" target="_blank">https://posthog.com/privacy</a>)</li>
-        <li><strong>RevenueCat, Inc.:</strong> Subscription and entitlement management for both Android and iOS (Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a>)</li>
-        <li><strong>Google Play Billing (Google LLC):</strong> Payment processing for Android subscriptions (Google Payments Privacy Notice: <a href="https://payments.google.com/files/privacy.html" target="_blank">https://payments.google.com/files/privacy.html</a>)</li>
-        <li><strong>Apple In-App Purchase (Apple Inc.):</strong> Payment processing for iOS subscriptions (Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/" target="_blank">https://www.apple.com/legal/privacy/</a>)</li>
-    </ul>
+<h2>5. Information Collected Automatically</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Data</th><th>Collected by</th><th>Why it is needed</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Account identifier (anonymous or linked)</td>
+      <td>Firebase Authentication</td>
+      <td>To keep your journal separate from other users' journals and to apply your subscription.</td>
+    </tr>
+    <tr>
+      <td>Crash reports: stack traces, app version, device model, operating system version</td>
+      <td>Firebase Crashlytics</td>
+      <td>To find and fix crashes.</td>
+    </tr>
+    <tr>
+      <td>Usage events such as <code>sign_up</code>, <code>login</code>, <code>account_deleted</code>, screen views, and the automatic events Firebase records</td>
+      <td>Firebase Analytics, PostHog</td>
+      <td>To understand which features are used and where people get stuck.</td>
+    </tr>
+    <tr>
+      <td>A product-analytics profile keyed to your account identifier, with device model, operating system, app version, and coarse country or region derived from the IP address</td>
+      <td>PostHog</td>
+      <td>To analyse retention and feature adoption. Your trade figures and notes are not sent as event properties.</td>
+    </tr>
+    <tr>
+      <td>Push notification token</td>
+      <td>Firebase Cloud Messaging</td>
+      <td>To deliver notifications to your device, if you allow them.</td>
+    </tr>
+    <tr>
+      <td>App integrity signals</td>
+      <td>Firebase App Check</td>
+      <td>To confirm that requests to our backend come from a genuine copy of the App, not from a script.</td>
+    </tr>
+    <tr>
+      <td>Configuration flags fetched by the App (for example the minimum supported version and promotional banners)</td>
+      <td>Firebase Remote Config</td>
+      <td>To change behaviour and messaging without shipping an update.</td>
+    </tr>
+    <tr>
+      <td>Subscription status and purchase receipt</td>
+      <td>RevenueCat</td>
+      <td>To unlock premium features and restore purchases. See section 7.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-    <h2>6. Data Storage & Security</h2>
-    <h3>6.1 Where Data Is Stored</h3>
-    <ul>
-        <li><strong>Free users:</strong> All trade journal data is stored locally on your device only. We cannot access it.</li>
-        <li><strong>Premium users:</strong> Data is synced to Firebase Cloud (Google Cloud infrastructure), with servers primarily located in the United States.</li>
-    </ul>
+<h2>6. Where Your Data Is Stored</h2>
+<ul>
+  <li><strong>On your device.</strong> Your journal lives in a local database and works offline. This is the primary copy, and it is where an entry is written first.</li>
+  <li><strong>In our cloud.</strong> Once you are signed in, entries are synced to Google Firebase — Cloud Firestore for the text and figures, Cloud Storage for attached images — filed under your account identifier.</li>
+</ul>
+<p>Access is enforced by server-side security rules: a request carrying your identifier can read and write only data filed under that same identifier. All traffic uses HTTPS/TLS.</p>
 
-    <h3>6.2 Security Measures</h3>
-    <p>We implement industry-standard security practices including:</p>
-    <ul>
-        <li>All data transmitted between your device and our servers is encrypted using HTTPS/TLS</li>
-        <li>Firebase Security Rules restrict access so only you can read/write your own data</li>
-        <li>We do not store passwords in plain text</li>
-        <li>Access to backend systems is restricted to authorized personnel only</li>
-    </ul>
-    <p>While we take reasonable precautions, no method of data transmission or storage is 100% secure. We cannot guarantee absolute security of your data.</p>
+<h2>7. Subscriptions and Payments</h2>
+<p>JustSpot offers an optional auto-renewing subscription that unlocks premium features.</p>
+<p>We <strong>never</strong> see or handle your card details. Payment is processed entirely by Apple or Google. We use <strong>RevenueCat, Inc.</strong> to verify purchases and tell the App whether your subscription is active. RevenueCat receives your app user identifier, the purchase receipt issued by the store, and basic device and country information.</p>
+<p>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period, in your <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play</a> subscription settings.</p>
 
-    <h3>6.3 Data Retention</h3>
-    <ul>
-        <li>Account data is retained for as long as your account is active</li>
-        <li>After account deletion, your data is removed from our servers within 30 days</li>
-        <li>Local data on your device is deleted when you uninstall the App</li>
-        <li>Anonymized analytics data may be retained longer in aggregated, non-identifiable form</li>
-    </ul>
+<h2>8. Third-Party Services</h2>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Provider</th><th>Purpose</th><th>Their policy</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Google LLC — Firebase Authentication, Cloud Firestore, Cloud Storage, Cloud Messaging, Remote Config, App Check</td>
+      <td>Sign-in, cloud backup of your journal, notifications, configuration, and anti-abuse</td>
+      <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a></td>
+    </tr>
+    <tr>
+      <td>Google LLC — Firebase Crashlytics and Analytics</td>
+      <td>Crash reports and aggregate usage statistics</td>
+      <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google privacy</a></td>
+    </tr>
+    <tr>
+      <td>Google LLC — Google Sign-In</td>
+      <td>Optional sign-in with your Google account</td>
+      <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google privacy</a></td>
+    </tr>
+    <tr>
+      <td>Apple Inc. — Sign in with Apple</td>
+      <td>Optional sign-in with your Apple account</td>
+      <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple privacy</a></td>
+    </tr>
+    <tr>
+      <td>PostHog, Inc.</td>
+      <td>Product analytics</td>
+      <td><a href="https://posthog.com/privacy" target="_blank" rel="noopener">PostHog privacy</a></td>
+    </tr>
+    <tr>
+      <td>RevenueCat, Inc.</td>
+      <td>Subscription and entitlement management</td>
+      <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat privacy</a></td>
+    </tr>
+    <tr>
+      <td>Apple Inc. — In-App Purchase / Google LLC — Google Play Billing</td>
+      <td>Payment processing</td>
+      <td><a href="https://payments.google.com/files/privacy.html" target="_blank" rel="noopener">Google Payments privacy</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>We do not use advertising networks, and we do not share data with data brokers.</p>
 
-    <h2>7. Your Rights & Choices</h2>
-    <p>Regardless of your location, you have the following rights: Access, Correction, Deletion, Portability, Opt-out.</p>
-    
-    <h3>7.1 How to Delete Your Data</h3>
-    <p>You may delete your account and all associated data by:</p>
-    <ul>
-        <li>In-App: Settings &rarr; Account &rarr; Delete Account</li>
-        <li>By email: Send a request to <code>fazogirapps@gmail.com</code> with subject "Data Deletion Request"</li>
-    </ul>
-    <p>Upon verified request, we will delete your data from Firebase within 30 days. Note: data stored locally on your device must be removed by uninstalling the App.</p>
+<h2>9. Device Permissions</h2>
+<ul>
+  <li><strong>Camera</strong> — only to photograph a chart or note when you choose the camera. Nothing is recorded in the background.</li>
+  <li><strong>Photo library</strong> — only to let you attach an existing image. The App reads the single image you select.</li>
+  <li><strong>Notifications</strong> — only to deliver reminders and announcements. You can decline and keep using the App.</li>
+</ul>
+<p>You can withdraw any of these permissions at any time in your device settings.</p>
 
-    <h2>8. GDPR — European Union Users</h2>
-    <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, contract performance, legitimate interests, and consent apply. You have full GDPR rights including access, rectification, erasure, restriction, portability, and right to object. Contact: <code>fazogirapps@gmail.com</code></p>
+<h2>10. Data Retention</h2>
+<ul>
+  <li><strong>Journal entries</strong> — kept until you delete them or delete your account.</li>
+  <li><strong>Firebase Analytics and PostHog events</strong> — retained for a limited period under our project settings, then deleted automatically.</li>
+  <li><strong>Crashlytics</strong> — crash reports are retained by Google for approximately 90 days.</li>
+  <li><strong>RevenueCat</strong> — purchase records are kept while the subscription and its history are relevant to the stores.</li>
+</ul>
 
-    <h2>9. CCPA — California Residents</h2>
-    <p>If you are a California resident, you have rights under the CCPA (know, delete, opt-out of sale, non-discrimination). We do not sell your personal information. Contact: <code>fazogirapps@gmail.com</code></p>
+<h2 id="deletion">11. Your Rights and Choices</h2>
+<ul>
+  <li><strong>Delete a single trade</strong> — open it and choose Delete. It is removed from your device and from the cloud copy.</li>
+  <li><strong>Delete your account</strong> — profile screen → Delete Account. This permanently deletes your sign-in account, after which you can no longer access the journal associated with it. <strong>If you also want the stored copies of your entries and images erased from our cloud, email <a href="mailto:fazogirapps@gmail.com">fazogirapps@gmail.com</a> from the address you signed in with, and we will delete them within 30 days.</strong></li>
+  <li><strong>Remove the local copy</strong> — uninstall the App.</li>
+  <li><strong>Cancel your subscription</strong> — in your App Store or Google Play settings. Deleting your account does not cancel a subscription; you must cancel it in the store.</li>
+  <li><strong>Ask us anything else</strong> — write to <a href="mailto:fazogirapps@gmail.com">fazogirapps@gmail.com</a>. If you only ever used the App anonymously, we may be unable to locate your data unless you can supply your account identifier.</li>
+</ul>
 
-    <h2>10. Children's Privacy</h2>
-    <p>This App is not directed to children under the age of 13 (or 16 in the EEA). We do not knowingly collect personal information from children under these ages. If you believe we have inadvertently collected data from a child, please contact us immediately at <code>fazogirapps@gmail.com</code>.</p>
+<h2>12. GDPR — European Economic Area, United Kingdom, Switzerland</h2>
+<p>Where the GDPR or UK GDPR applies, Fazogirapps is the controller for the data described above. Our legal bases are:</p>
+<ul>
+  <li><strong>Performance of a contract</strong> — storing and syncing your journal, delivering the features you use, and applying your subscription.</li>
+  <li><strong>Legitimate interests</strong> — keeping the service reliable and secure, preventing abuse, and understanding aggregate usage well enough to improve the App.</li>
+  <li><strong>Consent</strong> — camera, photo library, and notification permissions, which you may withdraw at any time.</li>
+</ul>
+<p>You have the rights of access, rectification, erasure, restriction, objection, and data portability, and the right to lodge a complaint with your local supervisory authority. Contact <a href="mailto:fazogirapps@gmail.com">fazogirapps@gmail.com</a>.</p>
 
-    <h2>11. International Data Transfers</h2>
-    <p>As our App is available globally and we use Firebase (Google Cloud), your data may be transferred to and processed in the United States under Google's Standard Contractual Clauses (SCCs).</p>
+<h2>13. CCPA / CPRA — California Residents</h2>
+<p>We do not sell personal information and we do not share it for cross-context behavioural advertising. California residents may exercise their rights of access, deletion, and correction using the methods in section 11. We will not discriminate against you for exercising them.</p>
 
-    <h2>12. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Continued use of the App after the effective date constitutes your acceptance of the revised policy.</p>
+<h2>14. Children's Privacy</h2>
+<p>The App is not directed to children under 13 (or under 16 in the EEA/UK), and trading is not an activity for minors. We do not knowingly collect personal information from children. If you believe a child has used the App and provided data, contact us and we will delete it.</p>
 
-    <h2>13. Contact Us</h2>
-    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
-    <p><strong>Fazogirapps</strong><br>
-    Email: <code>fazogirapps@gmail.com</code><br>
-    We aim to respond to all requests within 30 days.</p>
+<h2>15. International Data Transfers</h2>
+<p>Google, PostHog, and RevenueCat may process data in the United States and other countries. Such transfers rely on the European Commission's Standard Contractual Clauses or another lawful transfer mechanism offered by those providers.</p>
 
-    <div class="footer">
-        <p>&copy; 2026 Fazogirapps. All rights reserved.</p>
-    </div>
+<h2>16. Security</h2>
+<p>All network traffic is encrypted with HTTPS/TLS. Server-side security rules restrict every record to the account that created it, and Firebase App Check rejects requests that do not come from a genuine copy of the App. No system is perfectly secure, and we cannot guarantee absolute security.</p>
+
+<h2>17. Changes to This Privacy Policy</h2>
+<p>We may update this Policy. The "Last Updated" date at the top always reflects the current version. For material changes we will give notice in the App. Continued use after an update means you accept the revised Policy.</p>
+
+<h2>18. Contact Us</h2>
+<p>Fazogirapps<br>Email: <a href="mailto:fazogirapps@gmail.com">fazogirapps@gmail.com</a></p>
+<p>We aim to respond within 30 days.</p>
+
+<div class="footer">
+  <p class="nav-links"><a href="terms.html">Terms of Use</a></p>
+  <p>© 2026 Fazogirapps. All rights reserved.</p>
+</div>
+
 </body>
 </html>
